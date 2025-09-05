@@ -9,7 +9,7 @@ from .base import AsyncBaseToolkit
 class UserInteractionToolkit(AsyncBaseToolkit):
     def __init__(self, config: ToolkitConfig = None):
         super().__init__(config)
-        self.ask_function = None
+        self.ask_function = PrintUtils.async_print_input
 
     def set_ask_function(self, ask_function: Callable[[str], str]):
         self.ask_function = ask_function
@@ -21,8 +21,7 @@ class UserInteractionToolkit(AsyncBaseToolkit):
             question (str): The question to ask.
         """
         if self.ask_function:
-            return self.ask_function(question)
-        return await PrintUtils.async_print_input(f"Please answer the question: {question}\n> ")
+            return await self.ask_function(question)
 
     async def final_answer(self, answer: Any) -> str:
         """Provides a final answer to the given problem.
