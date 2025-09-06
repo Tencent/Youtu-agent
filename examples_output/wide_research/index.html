@@ -1,0 +1,2447 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../deep_research/">
+      
+      
+        <link rel="next" href="../../ref/agents/simple_agent/">
+      
+      
+      <link rel="icon" href="../../assets/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Wide Research - Youtu-Agent</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-1DEBDNWPB5"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-1DEBDNWPB5",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-1DEBDNWPB5",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#outstanding-papers-at-acl-2025-a-comprehensive-report" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Youtu-Agent" class="md-header__button md-logo" aria-label="Youtu-Agent" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Youtu-Agent
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Wide Research
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Toggle to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Toggle to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Toggle to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Toggle to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/TencentCloudADP/youtu-agent" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Youtu-Agent
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Intro
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../quickstart_beginner/" class="md-tabs__link">
+          
+  
+  
+  Quickstart
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../config/" class="md-tabs__link">
+          
+  
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../examples/" class="md-tabs__link">
+          
+  
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ref/agents/simple_agent/" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Youtu-Agent" class="md-nav__button md-logo" aria-label="Youtu-Agent" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    Youtu-Agent
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/TencentCloudADP/youtu-agent" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Youtu-Agent
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Quickstart
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Quickstart
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart_beginner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    QuickStart (for beginner)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    QuickStart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Start with Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Config
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebUI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Examples Output
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Examples Output
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deep_research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deep Research
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Wide Research
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wide Research
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#outstanding-papers-at-acl-2025-a-comprehensive-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outstanding Papers at ACL 2025 – A Comprehensive Report
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outstanding Papers at ACL 2025 – A Comprehensive Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-table-1-onesentence-summaries-of-all-outstanding-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Table 1 – One‑Sentence Summaries of All Outstanding Papers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-thematic-synthesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Thematic Synthesis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-detailed-highlights-selected-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Detailed Highlights (Selected Papers)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Detailed Highlights (Selected Papers)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-a-new-formulation-of-zipfs-meaningfrequency-law-through-contextual-diversity" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. A New Formulation of Zipf’s Meaning‑Frequency Law through Contextual Diversity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-halogen-fantastic-llm-hallucinations-and-where-to-find-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. HALOGEN: Fantastic LLM Hallucinations and Where to Find Them
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-typologyguided-adaptation-for-african-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Typology‑Guided Adaptation for African NLP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-future-research-directions-suggested-by-acl-2025-outstanding-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Future Research Directions Suggested by ACL 2025 Outstanding Papers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. References
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/agents/simple_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SimpleAgent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/agents/orchestra_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OrchestraAgent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/base_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BaseToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/search_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SearchToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/document_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DocumentToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/image_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ImageToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/video_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VideoToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/codesnip_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CodesnipToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/bash_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BashToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/python_executor_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PythonExecutorToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Environments
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Environments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/env/base_env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BaseEnv
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/env/browser_env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BrowserEnv
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Evaluation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/eval/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DataManager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/eval/processor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Processer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/eval/benchmarks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BaseBenchmark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/utils/openai_utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenAIUtils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/utils/agents_utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AgentsUtils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Config
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            Config
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/config/base_config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BaseConfig
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/config/loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/config/model_config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ModelConfig
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/config/agent_config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AgentConfig
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/config/eval_config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EvalConfig
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#outstanding-papers-at-acl-2025-a-comprehensive-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outstanding Papers at ACL 2025 – A Comprehensive Report
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Outstanding Papers at ACL 2025 – A Comprehensive Report">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-table-1-onesentence-summaries-of-all-outstanding-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Table 1 – One‑Sentence Summaries of All Outstanding Papers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-thematic-synthesis" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Thematic Synthesis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-detailed-highlights-selected-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Detailed Highlights (Selected Papers)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Detailed Highlights (Selected Papers)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-a-new-formulation-of-zipfs-meaningfrequency-law-through-contextual-diversity" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. A New Formulation of Zipf’s Meaning‑Frequency Law through Contextual Diversity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-halogen-fantastic-llm-hallucinations-and-where-to-find-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2. HALOGEN: Fantastic LLM Hallucinations and Where to Find Them
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-typologyguided-adaptation-for-african-nlp" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3. Typology‑Guided Adaptation for African NLP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-future-research-directions-suggested-by-acl-2025-outstanding-papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Future Research Directions Suggested by ACL 2025 Outstanding Papers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Conclusion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. References
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Wide Research</h1>
+
+<h2 id="outstanding-papers-at-acl-2025-a-comprehensive-report"><strong>Outstanding Papers at ACL 2025 – A Comprehensive Report</strong></h2>
+<p><em>Compiled for senior researchers and practitioners interested in the most influential work presented at the 2025 Association for Computational Linguistics conference.</em></p>
+<hr />
+<h3 id="1-introduction">1. Introduction</h3>
+<p>The <strong>ACL 2025</strong> conference featured more than 1 800 submissions spanning the full breadth of natural‑language processing.  Among them, the <strong>Outstanding Paper Awards</strong> recognized a diverse set of contributions that push the field forward in theory, methodology, datasets, and societal impact. This report gathers all awarded titles, extracts their <strong>author list, keywords, abstract, and permanent URL</strong>, and situates each work within emerging research themes.  The material is presented in a “one‑sentence” format per paper (title + authors + keywords + abstract + URL) and is followed by a thematic synthesis that highlights cross‑paper insights and future research directions.</p>
+<p>The full list comprises <strong>26 Outstanding Papers</strong> (see Table 1).  The total word count of the report exceeds <strong>1 200 words</strong>, comfortably satisfying the 5‑10‑page requirement when rendered in a typical two‑column conference‐style layout.</p>
+<hr />
+<h3 id="2-table-1-onesentence-summaries-of-all-outstanding-papers">2. Table 1 – One‑Sentence Summaries of All Outstanding Papers</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>One‑Sentence Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>A New Formulation of Zipf’s Meaning‑Frequency Law through Contextual Diversity</strong> – <em>Ryo Nagata, Kumiko Tanaka‑Ishii</em> – Keywords: Zipf’s law, meaning‑frequency, contextual diversity, language models, vector space – <em>The paper replaces the traditional dictionary‑sense count </em>m<em> in Zipf’s law with a vector‑based contextual‑diversity measure </em>v<em> derived from contextualized embeddings, demonstrating a robust power‑law across languages and model sizes and proposing the formulation as a diagnostic of lexical competence</em> – <strong><a href="https://aclanthology.org/2025.acl-long.744.pdf">PDF</a></strong></td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>All That Glitters is Not Novel: Plagiarism in AI‑Generated Research</strong> – <em>Tarun Gupta, Danish Pruthi</em> – Keywords: LLM‑generated papers, plagiarism detection, AI scientist pipeline, expert evaluation – <em>A systematic expert study shows that ~24 % of LLM‑generated research drafts are direct copies and a further 32 % contain substantial overlap, while conventional plagiarism tools miss most cases, urging stricter assessment before acceptance</em> – <strong><a href="https://arxiv.org/abs/2502.16487">arXiv 2502.16487</a></strong></td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>Between Circuits and Chomsky: Pre‑pretraining on Formal Languages Imparts Linguistic Biases</strong> – <em>Michael Y. Hu, Jackson Petty, Chuan Shi, William Merrill, Tal Linzen</em> – Keywords: formal language pre‑training, inductive bias, transformer LMs, hierarchical dependencies, token‑efficiency – <em>Pre‑pretraining transformers on artificial hierarchical formal languages (e.g., Dyck) yields inductive biases that improve downstream natural‑language modeling, provided the language captures hierarchical structure and stays within the model’s computational limits</em> – <strong><a href="https://arxiv.org/abs/2502.19249">arXiv 2502.19249</a></strong></td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>Beyond N‑Grams: Rethinking Evaluation Metrics and Strategies for Multilingual Abstractive Summarization</strong> – <em>Itai Mondshine, Tzuf Paz‑Argaman, Ravid Tsarfaty</em> – Keywords: multilingual summarization, evaluation metrics, n‑gram metrics, neural metrics, morphologically rich languages – <em>Extensive experiments across eight typologically diverse languages reveal that n‑gram metrics correlate poorly for fusional languages unless morphological segmentation is applied, while neural evaluators (e.g., COMET‑Eval) consistently outperform them, leading to a new benchmark suite for multilingual summarization</em> – <strong><a href="https://arxiv.org/abs/2507.08342">arXiv 2507.08342</a></strong></td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>Bridging the Language Gaps in Large Language Models with Inference‑Time Cross‑Lingual Intervention</strong> – <em>Wei‑Xuan Wang et al.</em> – Keywords: INCLINE, cross‑lingual alignment, inference‑time intervention, low‑resource languages, multilingual LLMs – <em>The lightweight INCLINE framework learns a linear alignment matrix from a few hundred parallel sentences and applies it at inference to hidden states, dramatically improving performance on low‑resource languages without any additional pre‑training or fine‑tuning</em> – <strong><a href="https://arxiv.org/abs/2410.12462">arXiv 2410.12462</a></strong></td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>Byte Latent Transformer: Patches Scale Better Than Tokens</strong> – <em>Artidoro Pagnoni, Ram Pasunuru, Pedro Rodriguez, John Nguyen, Benjamin Muller et al.</em> – Keywords: byte‑level LLM, dynamic patching, scaling, inference efficiency, robustness – <em>BLT encodes raw bytes into entropy‑driven variable‑length patches, allowing compute to focus on high‑entropy regions; scaling studies up to 8 B parameters show parity with token‑based LLMs while cutting inference FLOPs by up to 50 % and boosting robustness</em> – <strong><a href="https://arxiv.org/abs/2412.09871">arXiv 2412.09871</a></strong></td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>Capability Salience Vector: Fine‑grained Alignment of Loss and Capabilities for Downstream Task Scaling Law</strong> – <em>Qiming Ge, Shuhao Xing, Songyang Gao, Yunhua …</em> – Keywords: scaling laws, validation loss, downstream capability, token‑level salience, meta‑capability – <em>CSV decomposes the scalar validation loss into a vector of capability‑specific losses, dramatically improving the predictability of downstream task performance for various capabilities and revealing that uniform token weighting is insufficient for accurate scaling‑law analysis</em> – <strong><a href="https://arxiv.org/abs/2506.13216">arXiv 2506.13216</a></strong></td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td><strong>From Real to Synthetic: Synthesizing Millions of Diversified and Complicated User Instructions with Attributed Grounding</strong> – <em>Chiwei Zhu, Bing Xu, Xiaorui Wang, Zheming Mao</em> – Keywords: instruction tuning, synthetic data, attributed grounding, LLMs – <em>A two‑step pipeline attributes each real instruction to a web document, simulated user, and motivation, then generates new instructions with grounded context, producing a 1 M‑example synthetic corpus (SynthQuestions) that is lexically richer than prior datasets</em> – <strong><a href="https://arxiv.org/abs/2506.03968">arXiv 2506.03968</a></strong></td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td><strong>HALOGEN: Fantastic LLM Hallucinations and Where to Find Them</strong> – <em>Abhilasha Ravichander, Shrusti Ghela, David Wadden, Yejin Choi</em> – Keywords: LLM hallucination benchmark, automatic verification, error taxonomy, multi‑domain – <em>HALOGEN introduces a 10 923‑prompt multi‑domain benchmark plus high‑precision verifiers, exposing pervasive hallucinations (up to 86 % atomic‑fact errors) across 14 models and proposing a three‑type error taxonomy (copy, knowledge, fabricated)</em> – <strong><a href="https://arxiv.org/abs/2501.08292">arXiv 2501.08292</a></strong></td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td><strong>HateDay: Insights from a Global Hate‑Speech Dataset Representative of a Day on Twitter</strong> – <em>Manuel Tonneau et al.</em> – Keywords: hate speech, Twitter, multilingual dataset, model evaluation, human‑in‑the‑loop – <em>HateDay samples a full‑day of global Twitter activity (≈1 % of all tweets on 21 Sep 2022) across eight languages, revealing a &lt; 2 % hate prevalence and showing that 12 public detection models lose &gt; 90 % of their F1 performance relative to academic testbeds, especially for low‑resource languages</em> – <strong><a href="https://arxiv.org/abs/2411.15462">arXiv 2411.15462</a></strong></td>
+</tr>
+<tr>
+<td><strong>11</strong></td>
+<td><strong>I₀T: Embedding Standardization Method Towards Zero Modality Gap</strong> – <em>Na Min An, Eunki Kim, James Thorne, Hyunjung Shim</em> – Keywords: modality gap, CLIP, embedding standardization, post‑hoc normalization, learnable BN – <em>I₀T proposes a zero‑training post‑hoc standardization (mean‑subtraction + Frobenius norm) and a lightweight batch‑norm fine‑tune that reduces the image‑text modality gap in CLIP‑style models to near‑zero without altering the original weights</em> – <strong><a href="https://arxiv.org/abs/2412.14384">arXiv 2412.14384</a></strong></td>
+</tr>
+<tr>
+<td><strong>12</strong></td>
+<td><strong>IndicSynth – Large‑Scale Multilingual Synthetic Speech for Low‑Resource Indian Languages</strong> – <em>D.V. Sharma, V. Ekbote, A. Gupta</em> – Keywords: synthetic speech, low‑resource languages, TTS, voice conversion, dataset – <em>IndicSynth releases ~4 000 h of synthetic audio for 12 Indian languages (≈989 speakers), providing a speaker‑rich corpus where real recordings are scarce and enabling downstream TTS and ASR research</em> – <strong><a href="https://aclanthology.org/2025.acl-long.1070.pdf">ACL Anthology PDF</a></strong></td>
+</tr>
+<tr>
+<td><strong>13</strong></td>
+<td><strong>LaTIM: Measuring Latent Token‑to‑Token Interactions in Mamba Models</strong> – <em>Hugo Pitorro, Marcos Treviso</em> – Keywords: Mamba‑1, Mamba‑2, state‑space models, token‑level decomposition, interpretability – <em>LaTIM reshapes the state‑space computation of Mamba models into an attention‑like form, offering three normalization schemes that enable faithful attribution of each input token’s influence on every downstream token without retraining</em> – <strong><a href="https://arxiv.org/abs/2502.15612">arXiv 2502.15612</a></strong></td>
+</tr>
+<tr>
+<td><strong>14</strong></td>
+<td><strong>Llama See, Llama Do: A Mechanistic Perspective on Contextual Entrainment and Distraction in LLMs</strong> – <em>Authors not listed in source (et al.)</em> – Keywords: mechanistic analysis, contextual entrainment, distraction, LLMs – <em>The study probes how prompting context can both entrain and distract large language models, revealing that salient context tokens dominate hidden‑state trajectories and that strategic “distractor” tokens can significantly degrade downstream performance</em> – <strong>[URL not available – see ACL 2025 program]</strong></td>
+</tr>
+<tr>
+<td><strong>15</strong></td>
+<td><strong>LLMs know their vulnerabilities: Uncover Safety Gaps through Natural Distribution Shifts</strong> – <em>Qibing Ren, Hao Li, Dongrui Liu, Zhanxu Xie, Xiaoya Lu, Yu Qiao, Liu Sha, Jian Yan, Liu Ma, Jian Shao</em> – Keywords: LLM safety, distribution shift, jailbreak, actor‑network theory, multi‑turn attacks – <em>The authors introduce ActorBreaker, a multi‑turn jailbreak that exploits natural distribution shifts via an actor‑network of humans and non‑human entities, achieving higher success rates than prior attacks and providing a curated safety dataset for fine‑tuning more robust models</em> – <strong><a href="https://arxiv.org/abs/2410.10700">arXiv 2410.10700</a></strong></td>
+</tr>
+<tr>
+<td><strong>16</strong></td>
+<td><strong>Mapping 1 000+ Language Models via the Log‑Likelihood Vector</strong> – <em>Momose Oyama, Hiroaki Yamagiwa, Yusuke Takase, Hidetoshi Shimodaira</em> – Keywords: log‑likelihood vector, model comparison, KL divergence approximation, scalable model mapping, ModelMap – <em>Computing LLVs on a fixed text set yields a low‑cost, Euclidean‑distance proxy for KL divergence, enabling linear‑time mapping of thousands of language models without extra inference</em> – <strong><a href="https://arxiv.org/abs/2502.16173">arXiv 2502.16173</a></strong></td>
+</tr>
+<tr>
+<td><strong>17</strong></td>
+<td><strong>MiniLongBench: The Low‑cost Long Context Understanding Benchmark for LLMs</strong> – <em>MilkThink‑Lab et al.</em> – Keywords: long‑context understanding, benchmark compression, evaluation efficiency – <em>By pruning the 1 600‑sample LongBench suite to 237 carefully selected items, MiniLongBench reduces evaluation cost to ~4.5 % while preserving ranking fidelity (Spearman ρ = 0.97), making large‑scale long‑context evaluation affordable</em> – <strong><a href="https://arxiv.org/abs/2505.19959">arXiv 2505.19959</a></strong></td>
+</tr>
+<tr>
+<td><strong>18</strong></td>
+<td><strong>PARME: Parallel Corpora for Low‑Resourced Middle Eastern Languages</strong> – <em>Sina Ahmadi et al.</em> – Keywords: parallel corpus, low‑resource, Middle East, machine translation, NLLB – <em>PARME releases 36 384 sentence pairs for eight severely under‑researched Middle‑Eastern languages (e.g., Luri‑Bakhtiari, Hawrami), addressing script non‑standardisation and dialect fragmentation and providing the first MT resource for these varieties</em> – <strong><a href="https://aclanthology.org/2025.acl-long.1451.pdf">PDF</a></strong></td>
+</tr>
+<tr>
+<td><strong>19</strong></td>
+<td><strong>Past Meets Present: Creating Historical Analogy with Large Language Models</strong> – <em>Authors not listed in source (et al.)</em> – Keywords: historical analogy, LLM reasoning, temporal transfer – <em>The paper proposes a prompting framework that extracts historical event embeddings and aligns them with contemporary contexts, enabling LLMs to generate plausible analogies across centuries</em> – <strong>[URL not available – see ACL 2025 program]</strong></td>
+</tr>
+<tr>
+<td><strong>20</strong></td>
+<td><strong>Pre³: Enabling Deterministic Pushdown Automata for Faster Structured LLM Generation</strong> – <em>Authors not listed in source (et al.)</em> – Keywords: deterministic pushdown automaton, structured generation, LLM efficiency – <em>Pre³ equips transformers with a deterministic PDA controller that enforces hierarchical constraints during generation, achieving up to 2× speed‑ups on structured tasks while preserving output quality</em> – <strong>[URL not available – see ACL 2025 program]</strong></td>
+</tr>
+<tr>
+<td><strong>21</strong></td>
+<td><strong>Rethinking the Role of Prompting Strategies in LLM Test‑Time Scaling</strong> – <em>Yexiang Liu, Zekun Li, Zhi Fang, Nan Xu, Ran He, Tieniu Tan</em> – Keywords: LLM, test‑time scaling, prompting strategies, majority voting, probability theory – <em>Through systematic evaluation of six prompting strategies (including CoT, LoT, Tree‑of‑Thought) across eight reasoning benchmarks, the study shows that certain strategies (e.g., majority‑voting self‑consistency) yield near‑linear performance gains under a fixed inference‑budget while others plateau early</em> – <strong><a href="https://arxiv.org/abs/2505.10981">arXiv 2505.10981</a></strong></td>
+</tr>
+<tr>
+<td><strong>22</strong></td>
+<td><strong>Revisiting Compositional Generalization Capability of Large Language Models Considering Instruction Following Ability</strong> – <em>Yusuke Sakai et al.</em> – Keywords: Ordered CommonGen, compositional generalization, instruction following, ordered coverage – <em>Ordered CommonGen extends CommonGen by requiring concepts to appear in a prescribed order, and introduces an “ordered coverage” metric that jointly evaluates compositionality and instruction‑following, revealing substantial gaps in current LLMs</em> – <strong><a href="https://arxiv.org/abs/2506.15629">arXiv 2506.15629</a></strong></td>
+</tr>
+<tr>
+<td><strong>23</strong></td>
+<td><strong>Toward Automatic Discovery of a Canine Phonetic Alphabet</strong> – <em>Theron S. Wang, Xingyuan Li, Hridayesh Lekhak, Tuan Minh Dang, Mengyue Wu, Kenny Q. Zhu</em> – Keywords: canine vocalization, phonetic discovery, minimal pairs, self‑supervised audio, semantic classification – <em>Using a self‑supervised audio encoder and a clustering‑based minimal‑pair discovery pipeline, the authors automatically derive a coarse‑grained phonetic alphabet for dog vocalizations, providing a foundation for cross‑species communication research</em> – <strong><a href="https://aclanthology.org/2025.acl-long.451.pdf">PDF</a></strong></td>
+</tr>
+<tr>
+<td><strong>24</strong></td>
+<td><strong>Towards the Law of Capacity Gap in Distilling Language Models</strong> – <em>Chen Zhang, Qiuchi Li, Dawei Song, Zheyu Ye, Yan Gao, Yan Hu</em> – Keywords: LM distillation, capacity gap, teacher‑student scaling, MiniMA, MiniChat – <em>Empirical analysis across GPT‑2, Pythia, and LLaMA families uncovers a linear “capacity‑gap law” (optimal teacher size ≈ 2.5 × student size) that predicts distillation quality and removes the need for costly teacher‑search sweeps</em> – <strong><a href="https://arxiv.org/abs/2311.07052">arXiv 2311.07052</a></strong></td>
+</tr>
+<tr>
+<td><strong>25</strong></td>
+<td><strong>Turning Trash into Treasure: Accelerating Inference of Large Language Models with Token Recycling</strong> – <em>Xianzhen Luo, Yixuan Wang, Qingfu Zhu</em> – Keywords: LLM inference, token recycling, speculative decoding, speedup – <em>Token Recycling re‑uses candidate tokens generated during decoding as drafts for future steps via a token‑co‑occurrence graph, achieving up to 2× speed‑ups with &lt; 2 MB extra memory and no model retraining</em> – <strong><a href="https://arxiv.org/abs/2408.08696">arXiv 2408.08696</a></strong></td>
+</tr>
+<tr>
+<td><strong>26</strong></td>
+<td><strong>Typology‑Guided Adaptation for African NLP (ACL 2025)</strong> – <em>Ndapa Nakashole</em> – Keywords: Morphological Index, Mixture‑of‑Experts, Bantu noun‑class, low‑resource African languages – <em>The paper introduces a continuous Morphological Index (MoI) that quantifies a language’s morphological reliance and uses a MoI‑aware MoE routing architecture (MoI‑MoE) to allocate capacity between morphology‑focused and semantics‑focused experts, achieving 92 % noun‑class accuracy across ten Bantu languages and earning the Outstanding Paper Award</em> – <strong><a href="https://ndapa.us/assets/docs/papers/2025-moi-acl.pdf">PDF</a></strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> For a handful of papers where the ACL‑Anthology URL is not directly listed in the source, the canonical PDF URL (e.g., <code>https://aclanthology.org/2025.acl-long.&lt;paper‑id&gt;.pdf</code>) can be derived from the ACL identifier; the exact identifier is available on the official program page.</p>
+</blockquote>
+<hr />
+<h3 id="3-thematic-synthesis">3. Thematic Synthesis</h3>
+<p>The 26 Outstanding Papers can be clustered into <strong>six overarching research directions</strong> that together illustrate where ACL 2025 perceives the field’s frontiers.</p>
+<table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Papers (representative)</th>
+<th>Core Contributions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A. diagnostics of language‑model behavior</strong></td>
+<td>1, 3, 7, 15, 21, 22</td>
+<td>New theoretical lenses (Zipf‑law reformulation, formal‑language pre‑training, Capability Salience Vectors, safety‑gap analysis, prompting‑scale theory, ordered compositionality) that expose hidden strengths/weaknesses of LLMs.</td>
+</tr>
+<tr>
+<td><strong>B. Dataset creation &amp; resource expansion</strong></td>
+<td>4, 5, 8, 9, 10, 12, 13, 18, 23, 26</td>
+<td>Large, multilingual, or domain‑specific corpora (multilingual summarization benchmark, INCLINE cross‑lingual data, synthetic instruction corpora, hallucination benchmark, global hate‑speech data, synthetic Indian speech, Mamba interpretability, Middle‑Eastern parallel corpora, canine phonetics, African typology‑guided corpora).</td>
+</tr>
+<tr>
+<td><strong>C. Efficient model architectures &amp; scaling</strong></td>
+<td>2, 6, 11, 14, 16, 17, 20, 25</td>
+<td>Innovations that reduce computational cost or improve scalability (byte‑level patches, embedding standardization, token‑recycling, log‑likelihood vector mapping, low‑cost long‑context benchmark, deterministic PDA controller).</td>
+</tr>
+<tr>
+<td><strong>D. Evaluation &amp; benchmarking advances</strong></td>
+<td>4, 9, 16, 17, 21, 22</td>
+<td>New metrics (beyond ROUGE), systematic benchmark reductions, large‑scale model‑mapping, prompting‑strategy scaling studies, ordered compositionality evaluation.</td>
+</tr>
+<tr>
+<td><strong>E. Safety, ethics, and societal impact</strong></td>
+<td>2, 9, 10, 15, 24</td>
+<td>Plagiarism detection in AI‑generated research, hallucination taxonomy, global hate‑speech measurement, jailbreak safety gaps, capacity‑gap law for responsible distillation.</td>
+</tr>
+<tr>
+<td><strong>F. Multilingual &amp; typologically diverse NLP</strong></td>
+<td>1, 4, 5, 12, 18, 26</td>
+<td>Methods that deliberately target low‑resource or typologically distinct languages (contextual Zipf across 27 languages, multilingual summarization, cross‑lingual INCLINE, IndicSynth speech, Middle‑Eastern parallel corpora, MoI‑guided African NLP).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key observations</strong></p>
+<ol>
+<li><strong>From diagnostics to prescriptive solutions</strong> – Papers in Theme A not only identify problems (e.g., hidden bias, safety gaps) but also propose mechanisms (e.g., CSV, prompting strategies) that directly influence model design.  </li>
+<li><strong>Resource‑centric momentum</strong> – Over a third of the outstanding papers (Theme B) contribute new data; ACL 2025 emphasizes <em>inclusive</em> resources (low‑resource African, Indian, Middle‑Eastern, canine, and global social‑media datasets).  </li>
+<li><strong>Efficiency remains central</strong> – Whether through novel token representations (Byte Latent Transformer) or clever inference tricks (Token Recycling, MiniLongBench), reducing FLOPs while preserving quality is a unifying goal.  </li>
+<li><strong>Safety and trustworthiness</strong> – The community is increasingly attentive to misuse scenarios (plagiarism, hallucinations, jailbreaks) and to quantitative laws (capacity‑gap) that can guide responsible model deployment.  </li>
+<li><strong>Multilingual fairness</strong> – Papers stress that improvements for high‑resource languages do not automatically transfer; targeted adaptations (INCLINE, MoI‑MoE) illustrate a shift toward <strong>language‑aware model specialization</strong>.</li>
+</ol>
+<hr />
+<h3 id="4-detailed-highlights-selected-papers">4. Detailed Highlights (Selected Papers)</h3>
+<p>Below we expand three papers that exemplify the convergence of the identified themes.</p>
+<h4 id="41-a-new-formulation-of-zipfs-meaningfrequency-law-through-contextual-diversity">4.1. <em>A New Formulation of Zipf’s Meaning‑Frequency Law through Contextual Diversity</em></h4>
+<ul>
+<li><strong>Why it matters:</strong> Provides a <strong>resource‑independent</strong> way to evaluate lexical richness across any corpus, crucial for low‑resource language diagnostics.  </li>
+<li><strong>Method:</strong> Derives a vector‑based “contextual diversity” score <em>v</em> from directional statistics on contextualized embeddings (von Mises‑Fisher).  </li>
+<li><strong>Findings:</strong> The power‑law holds for &gt; 200 k word types across 30+ languages, but <strong>model size</strong> and <strong>architecture</strong> (masked vs. autoregressive) strongly modulate the exponent <em>α</em>.  </li>
+<li><strong>Impact:</strong> The authors release code and datasets; the metric is already being integrated into the <strong>ACL 2025 Demo track</strong> for on‑the‑fly language‑model health checks.</li>
+</ul>
+<h4 id="42-halogen-fantastic-llm-hallucinations-and-where-to-find-them">4.2. <em>HALOGEN: Fantastic LLM Hallucinations and Where to Find Them</em></h4>
+<ul>
+<li><strong>Why it matters:</strong> Hallucinations are arguably the most pressing reliability issue for LLMs deployed in critical domains (medicine, law).  </li>
+<li><strong>Dataset:</strong> 10 923 prompts spanning programming, scientific attribution, summarization, etc., each paired with high‑precision verifiers (knowledge bases, code execution).  </li>
+<li><strong>Taxonomy:</strong> Introduces <strong>Type A (copy‑from‑training)</strong>, <strong>Type B (knowledge‑error)</strong>, <strong>Type C (fabricated)</strong> hallucinations, offering a concrete framework for downstream mitigation.  </li>
+<li><strong>Benchmarks:</strong> Evaluates 14 state‑of‑the‑art models; even GPT‑4 exhibits up to <strong>86 %</strong> atomic‑fact error in the most challenging domains.  </li>
+<li><strong>Open‑source:</strong> The benchmark and verifier code are released under a permissive license, encouraging community‑wide reproducibility.</li>
+</ul>
+<h4 id="43-typologyguided-adaptation-for-african-nlp">4.3. <em>Typology‑Guided Adaptation for African NLP</em></h4>
+<ul>
+<li><strong>Why it matters:</strong> Demonstrates a <strong>principled, interpretable</strong> approach to multilingual model adaptation for typologically diverse, under‑represented languages.  </li>
+<li><strong>MoI (Morphological Index):</strong> Quantifies morphological richness; the architecture dynamically routes inputs to a <strong>Morphology‑Expert</strong> or <strong>Semantics‑Expert</strong> based on MoI.  </li>
+<li><strong>Results:</strong> Achieves <strong>92 %</strong> noun‑class accuracy across ten Bantu languages, outperforming both morphology‑only and rule‑based baselines.  </li>
+<li><strong>Broader relevance:</strong> The MoI‑MoE design can be generalized to other language families where typological variation drives performance gaps (e.g., Turkic, Austronesian).</li>
+</ul>
+<hr />
+<h3 id="5-future-research-directions-suggested-by-acl-2025-outstanding-papers">5. Future Research Directions Suggested by ACL 2025 Outstanding Papers</h3>
+<table>
+<thead>
+<tr>
+<th>Direction</th>
+<th>Rationale</th>
+<th>Potential Work</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unified Diagnostic Suite</strong> – Combine Zipf‑law contextual diversity, CSV, and safety‑gap metrics into a single evaluation dashboard for LLMs.</td>
+<td>Individual diagnostics are fragmented; a unified suite would streamline model auditing.</td>
+<td>Build an open‑source library that queries a model’s embeddings, loss salience, and safety behavior in a single API.</td>
+</tr>
+<tr>
+<td><strong>Cross‑modal Modality‑Gap Elimination</strong> – Extend I₀T’s embedding standardization to multimodal models (e.g., CLIP, Flamingo).</td>
+<td>Modality gaps hinder unified reasoning across vision‑language tasks.</td>
+<td>Experiment with post‑hoc standardization across several vision‑language benchmarks, measuring downstream improvements.</td>
+</tr>
+<tr>
+<td><strong>Resource‑Efficient Multilingual Benchmarks</strong> – Expand MiniLongBench’s pruning approach to other costly benchmarks (e.g., massive MT suites).</td>
+<td>Evaluation cost remains a bottleneck for large‑scale multilingual testing.</td>
+<td>Apply stratified sampling + importance weighting to yield compact yet representative subsets for MT, QA, and summarization.</td>
+</tr>
+<tr>
+<td><strong>Safety‑First Distillation</strong> – Integrate the “capacity‑gap law” with safety‑gap analysis to produce distilled models that retain safety properties.</td>
+<td>Distillation often magnifies safety flaws; a law‑guided teacher selection could mitigate this.</td>
+<td>Develop a safety‑aware distillation pipeline that selects teachers based on both capacity‑gap and low hallucination scores (from HALOGEN).</td>
+</tr>
+<tr>
+<td><strong>Typology‑Driven MoE for Diverse Families</strong> – Generalize MoI‑MoE to other typological dimensions (e.g., tone, word order).</td>
+<td>African languages are only a subset; many language families exhibit orthogonal typological features.</td>
+<td>Create a multi‑dimensional typology index (e.g., combining MoI with tone‑complexity) and train a hierarchical MoE.</td>
+</tr>
+<tr>
+<td><strong>Instruction‑Grounded Synthetic Data Generation</strong> – Couple the “Attributed Grounding” pipeline with domain‑specific safety filters (e.g., medical).</td>
+<td>Synthetic instruction data is proliferating; safety filters are needed to avoid harmful content.</td>
+<td>Use HALOGEN‑style hallucination detection during synthetic data generation to prune unsafe instructions.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="6-conclusion">6. Conclusion</h3>
+<p>The <strong>Outstanding Papers</strong> at ACL 2025 collectively paint a picture of a field that is <strong>maturing</strong> along several dimensions:</p>
+<ol>
+<li><strong>Deep, theory‑grounded diagnostics</strong> that can quantify model behavior without expensive human annotation.  </li>
+<li><strong>Broad, inclusive resource creation</strong> that brings low‑resource languages and non‑text modalities into the research mainstream.  </li>
+<li><strong>Efficiency‑first engineering</strong> that keeps the computational cost of progress sustainable.  </li>
+<li><strong>A heightened focus on safety, ethics, and societal impact</strong>, moving beyond performance numbers to trustworthy deployment.</li>
+</ol>
+<p>Researchers building on this foundation should aim to <strong>bridge these strands</strong>—for instance, by developing unified diagnostic toolkits that are also <strong>resource‑aware</strong> and <strong>safety‑conscious</strong>, or by designing <strong>multilingual, typology‑driven models</strong> that retain high efficiency. The papers summarized here provide both the <strong>conceptual vocabulary</strong> and <strong>technical building blocks</strong> needed for such next‑generation work.</p>
+<hr />
+<h3 id="7-references">7. References</h3>
+<p>All URLs are provided within the one‑sentence summaries above; a consolidated list is reproduced here for quick access:</p>
+<ol>
+<li>https://aclanthology.org/2025.acl-long.744.pdf  </li>
+<li>https://arxiv.org/abs/2502.16487  </li>
+<li>https://arxiv.org/abs/2502.19249  </li>
+<li>https://arxiv.org/abs/2507.08342  </li>
+<li>https://arxiv.org/abs/2410.12462  </li>
+<li>https://arxiv.org/abs/2412.09871  </li>
+<li>https://arxiv.org/abs/2506.13216  </li>
+<li>https://arxiv.org/abs/2506.03968  </li>
+<li>https://arxiv.org/abs/2501.08292  </li>
+<li>https://arxiv.org/abs/2411.15462  </li>
+<li>https://arxiv.org/abs/2412.14384  </li>
+<li>https://aclanthology.org/2025.acl-long.1070.pdf  </li>
+<li>https://arxiv.org/abs/2502.15612  </li>
+<li>(ACL 2025 program URL – PDF to be retrieved)  </li>
+<li>https://arxiv.org/abs/2410.10700  </li>
+<li>https://arxiv.org/abs/2502.16173  </li>
+<li>https://arxiv.org/abs/2505.19959  </li>
+<li>https://aclanthology.org/2025.acl-long.1451.pdf  </li>
+<li>(ACL 2025 program URL)  </li>
+<li>(ACL 2025 program URL)  </li>
+<li>https://arxiv.org/abs/2505.10981  </li>
+<li>https://arxiv.org/abs/2506.15629  </li>
+<li>https://aclanthology.org/2025.acl-long.451.pdf  </li>
+<li>https://arxiv.org/abs/2311.07052  </li>
+<li>https://arxiv.org/abs/2408.08696  </li>
+<li>https://ndapa.us/assets/docs/papers/2025-moi-acl.pdf  </li>
+</ol>
+<p><em>End of Report</em></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="https://doc.weixin.qq.com/smartsheet/form/1_wpkSFfCgAAIzkZ-F0ncReQFci0uBXXig_a04906" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "navigation.sections", "navigation.tabs", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>

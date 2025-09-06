@@ -1,0 +1,3136 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../examples/">
+      
+      
+        <link rel="next" href="../wide_research/">
+      
+      
+      <link rel="icon" href="../../assets/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Deep Research - Youtu-Agent</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-1DEBDNWPB5"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-1DEBDNWPB5",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-1DEBDNWPB5",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#llm-tool-use-a-comprehensive-technical-report" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Youtu-Agent" class="md-header__button md-logo" aria-label="Youtu-Agent" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Youtu-Agent
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deep Research
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Toggle to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Toggle to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Toggle to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Toggle to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/TencentCloudADP/youtu-agent" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Youtu-Agent
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Intro
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../quickstart_beginner/" class="md-tabs__link">
+          
+  
+  
+  Quickstart
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../config/" class="md-tabs__link">
+          
+  
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../examples/" class="md-tabs__link">
+          
+  
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../ref/agents/simple_agent/" class="md-tabs__link">
+          
+  
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Youtu-Agent" class="md-nav__button md-logo" aria-label="Youtu-Agent" data-md-component="logo">
+      
+  <img src="../../assets/logo.svg" alt="logo">
+
+    </a>
+    Youtu-Agent
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/TencentCloudADP/youtu-agent" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Youtu-Agent
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Intro
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Quickstart
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Quickstart
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart_beginner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    QuickStart (for beginner)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    QuickStart
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Start with Docker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Documentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Config
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agent Environments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebUI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Examples Output
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Examples Output
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Deep Research
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Deep Research
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      1️⃣ Executive Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-foundations-of-llmdriven-tool-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      2️⃣ Foundations of LLM‑Driven Tool Use
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2️⃣ Foundations of LLM‑Driven Tool Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-openai-functioncalling-now-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 OpenAI Function‑Calling (now “Tools”)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-langchains-tool-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 LangChain’s Tool Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-chatgpt-gpt4-plugins-customtool-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 ChatGPT / GPT‑4 Plugins (Custom‑Tool Plugins)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-interaction-design-for-toolenabled-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      3️⃣ Interaction Design for Tool‑Enabled Agents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3️⃣ Interaction Design for Tool‑Enabled Agents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-ui-taxonomy-divergentconvergent-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 UI Taxonomy &amp; Divergent‑Convergent Workflows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-canvasbased-exploration-model-extended-ontochat" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Canvas‑Based Exploration Model (Extended OntoChat)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-security-safety-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      4️⃣ Security &amp; Safety Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4️⃣ Security &amp; Safety Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-threat-landscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Threat Landscape
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-sandboxing-isolation-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Sandboxing &amp; Isolation Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-validation-policy-enforcement-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Validation &amp; Policy Enforcement Frameworks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-costaware-latencyoptimised-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      5️⃣ Cost‑Aware &amp; Latency‑Optimised Engineering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5️⃣ Cost‑Aware &amp; Latency‑Optimised Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-modellevel-toolcost-penalties" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Model‑Level Tool‑Cost Penalties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-runtime-optimisations-engineering-tactics" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Runtime Optimisations (Engineering Tactics)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-evaluation-metrics-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      6️⃣ Evaluation Metrics &amp; Benchmarks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6️⃣ Evaluation Metrics &amp; Benchmarks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-core-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Core Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-benchmark-suites" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Benchmark Suites
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-bestpractice-guideline-for-production-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      7️⃣ Best‑Practice Guideline for Production Deployments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7️⃣ Best‑Practice Guideline for Production Deployments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-prompt-engineering-systemprompt-tool-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Prompt Engineering &amp; System‑Prompt Tool Disclosure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-schema-design-strict-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Schema Design &amp; Strict Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-observability-logging-version-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Observability, Logging &amp; Version Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-runtime-dsl-parser-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 Runtime DSL &amp; Parser Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-safety-gatekeeping-defenseindepth" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.5 Safety Gate‑keeping (Defense‑in‑Depth)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-case-studies-realworld-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      8️⃣ Case Studies &amp; Real‑World Deployments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8️⃣ Case Studies &amp; Real‑World Deployments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-industrial-pdfextraction-agent-aidagent-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Industrial PDF‑Extraction Agent (AID‑agent, 2025)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-finance-bot-realtime-stock-insight" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Finance Bot (Real‑time Stock Insight)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-travel-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 Travel Assistant
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-legal-clause-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.4 Legal Clause Analyzer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-marketresearch-synthesizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.5 Market‑Research Synthesizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86-react-zero_shot_react-as-a-generic-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.6 ReAct / ZERO_SHOT_REACT as a Generic Pattern
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-future-directions-open-research-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      9️⃣ Future Directions &amp; Open Research Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔟 References &amp; Further Reading
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wide_research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Wide Research
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API Reference
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            API Reference
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/agents/simple_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SimpleAgent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/agents/orchestra_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OrchestraAgent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/base_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BaseToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/search_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SearchToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/document_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DocumentToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/image_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ImageToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/video_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    VideoToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/codesnip_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CodesnipToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/bash_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BashToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/tool/python_executor_toolkit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PythonExecutorToolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Environments
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Environments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/env/base_env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BaseEnv
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/env/browser_env/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BrowserEnv
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Evaluation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Evaluation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/eval/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DataManager
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/eval/processor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Processer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/eval/benchmarks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BaseBenchmark
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Utils
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Utils
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/utils/openai_utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenAIUtils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/utils/agents_utils/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AgentsUtils
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Config
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            Config
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/config/base_config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BaseConfig
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/config/loader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Loader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/config/model_config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ModelConfig
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/config/agent_config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AgentConfig
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ref/config/eval_config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    EvalConfig
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      1️⃣ Executive Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-foundations-of-llmdriven-tool-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      2️⃣ Foundations of LLM‑Driven Tool Use
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2️⃣ Foundations of LLM‑Driven Tool Use">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-openai-functioncalling-now-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 OpenAI Function‑Calling (now “Tools”)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-langchains-tool-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 LangChain’s Tool Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-chatgpt-gpt4-plugins-customtool-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 ChatGPT / GPT‑4 Plugins (Custom‑Tool Plugins)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-interaction-design-for-toolenabled-agents" class="md-nav__link">
+    <span class="md-ellipsis">
+      3️⃣ Interaction Design for Tool‑Enabled Agents
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3️⃣ Interaction Design for Tool‑Enabled Agents">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-ui-taxonomy-divergentconvergent-workflows" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 UI Taxonomy &amp; Divergent‑Convergent Workflows
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-canvasbased-exploration-model-extended-ontochat" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Canvas‑Based Exploration Model (Extended OntoChat)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-security-safety-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      4️⃣ Security &amp; Safety Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4️⃣ Security &amp; Safety Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-threat-landscape" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Threat Landscape
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-sandboxing-isolation-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Sandboxing &amp; Isolation Strategies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-validation-policy-enforcement-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 Validation &amp; Policy Enforcement Frameworks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-costaware-latencyoptimised-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      5️⃣ Cost‑Aware &amp; Latency‑Optimised Engineering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5️⃣ Cost‑Aware &amp; Latency‑Optimised Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-modellevel-toolcost-penalties" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Model‑Level Tool‑Cost Penalties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-runtime-optimisations-engineering-tactics" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Runtime Optimisations (Engineering Tactics)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-evaluation-metrics-benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      6️⃣ Evaluation Metrics &amp; Benchmarks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6️⃣ Evaluation Metrics &amp; Benchmarks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-core-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Core Metrics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-benchmark-suites" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Benchmark Suites
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-bestpractice-guideline-for-production-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      7️⃣ Best‑Practice Guideline for Production Deployments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7️⃣ Best‑Practice Guideline for Production Deployments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-prompt-engineering-systemprompt-tool-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.1 Prompt Engineering &amp; System‑Prompt Tool Disclosure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-schema-design-strict-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.2 Schema Design &amp; Strict Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-observability-logging-version-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.3 Observability, Logging &amp; Version Control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-runtime-dsl-parser-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4 Runtime DSL &amp; Parser Integration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-safety-gatekeeping-defenseindepth" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.5 Safety Gate‑keeping (Defense‑in‑Depth)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-case-studies-realworld-deployments" class="md-nav__link">
+    <span class="md-ellipsis">
+      8️⃣ Case Studies &amp; Real‑World Deployments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8️⃣ Case Studies &amp; Real‑World Deployments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-industrial-pdfextraction-agent-aidagent-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 Industrial PDF‑Extraction Agent (AID‑agent, 2025)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-finance-bot-realtime-stock-insight" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Finance Bot (Real‑time Stock Insight)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-travel-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 Travel Assistant
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-legal-clause-analyzer" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.4 Legal Clause Analyzer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-marketresearch-synthesizer" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.5 Market‑Research Synthesizer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86-react-zero_shot_react-as-a-generic-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.6 ReAct / ZERO_SHOT_REACT as a Generic Pattern
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-future-directions-open-research-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      9️⃣ Future Directions &amp; Open Research Questions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔟 References &amp; Further Reading
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="llm-tool-use-a-comprehensive-technical-report"><strong>LLM Tool Use – A Comprehensive Technical Report</strong></h1>
+<p><em>Prepared by: Senior Researcher – Aug 2025</em></p>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#llm-tool-use--a-comprehensive-technical-report"><strong>LLM Tool Use – A Comprehensive Technical Report</strong></a><ul>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#1️⃣-executive-summary">1️⃣ Executive Summary</a></li>
+<li><a href="#2️⃣-foundations-of-llmdriven-tool-use">2️⃣ Foundations of LLM‑Driven Tool Use</a><ul>
+<li><a href="#21-openai-functioncalling-now-tools">2.1 OpenAI Function‑Calling (now “Tools”)</a></li>
+<li><a href="#22-langchains-tool-interface">2.2 LangChain’s Tool Interface</a></li>
+<li><a href="#23-chatgpt--gpt4plugins-customtool-plugins">2.3 ChatGPT / GPT‑4 Plugins (Custom‑Tool Plugins)</a></li>
+</ul>
+</li>
+<li><a href="#3️⃣-interaction-design-for-toolenabled-agents">3️⃣ Interaction Design for Tool‑Enabled Agents</a><ul>
+<li><a href="#31-ui-taxonomy--divergentconvergent-workflows">3.1 UI Taxonomy \&amp; Divergent‑Convergent Workflows</a></li>
+<li><a href="#32-canvasbased-exploration-model-extended-ontochat">3.2 Canvas‑Based Exploration Model (Extended OntoChat)</a></li>
+</ul>
+</li>
+<li><a href="#4️⃣-security--safety-considerations">4️⃣ Security \&amp; Safety Considerations</a><ul>
+<li><a href="#41-threat-landscape">4.1 Threat Landscape</a></li>
+<li><a href="#42-sandboxing--isolation-strategies">4.2 Sandboxing \&amp; Isolation Strategies</a></li>
+<li><a href="#43-validation--policy-enforcement-frameworks">4.3 Validation \&amp; Policy Enforcement Frameworks</a></li>
+</ul>
+</li>
+<li><a href="#5️⃣-costaware--latencyoptimised-engineering">5️⃣ Cost‑Aware \&amp; Latency‑Optimised Engineering</a><ul>
+<li><a href="#51-modellevel-toolcost-penalties">5.1 Model‑Level Tool‑Cost Penalties</a></li>
+<li><a href="#52-runtime-optimisations-engineering-tactics">5.2 Runtime Optimisations (Engineering Tactics)</a></li>
+</ul>
+</li>
+<li><a href="#6️⃣-evaluation-metrics--benchmarks">6️⃣ Evaluation Metrics \&amp; Benchmarks</a><ul>
+<li><a href="#61-core-metrics">6.1 Core Metrics</a></li>
+<li><a href="#62-benchmark-suites">6.2 Benchmark Suites</a></li>
+</ul>
+</li>
+<li><a href="#7️⃣-bestpractice-guideline-for-production-deployments">7️⃣ Best‑Practice Guideline for Production Deployments</a><ul>
+<li><a href="#71-prompt-engineering--systemprompt-tool-disclosure">7.1 Prompt Engineering \&amp; System‑Prompt Tool Disclosure</a></li>
+<li><a href="#72-schema-design--strict-mode">7.2 Schema Design \&amp; Strict Mode</a></li>
+<li><a href="#73-observability-logging--version-control">7.3 Observability, Logging \&amp; Version Control</a></li>
+<li><a href="#74-runtime-dsl--parser-integration">7.4 Runtime DSL \&amp; Parser Integration</a></li>
+<li><a href="#75-safety-gatekeeping-defenseindepth">7.5 Safety Gate‑keeping (Defense‑in‑Depth)</a></li>
+</ul>
+</li>
+<li><a href="#8️⃣-case-studies--realworld-deployments">8️⃣ Case Studies \&amp; Real‑World Deployments</a><ul>
+<li><a href="#81-industrial-pdfextraction-agent-aidagent-2025">8.1 Industrial PDF‑Extraction Agent (AID‑agent, 2025)</a></li>
+<li><a href="#82-finance-bot-realtime-stock-insight">8.2 Finance Bot (Real‑time Stock Insight)</a></li>
+<li><a href="#83-travel-assistant">8.3 Travel Assistant</a></li>
+<li><a href="#84-legal-clause-analyzer">8.4 Legal Clause Analyzer</a></li>
+<li><a href="#85-marketresearch-synthesizer">8.5 Market‑Research Synthesizer</a></li>
+<li><a href="#86-react--zero_shot_react-as-a-generic-pattern">8.6 ReAct / ZERO_SHOT_REACT as a Generic Pattern</a></li>
+</ul>
+</li>
+<li><a href="#9️⃣-future-directions--open-research-questions">9️⃣ Future Directions \&amp; Open Research Questions</a></li>
+<li><a href="#-references--further-reading">🔟 References \&amp; Further Reading</a></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="1-executive-summary">1️⃣ Executive Summary</h2>
+<p>Large Language Models (LLMs) have moved beyond pure text generation to become <strong>orchestrators of external tools</strong> – search engines, code interpreters, database connectors, custom APIs, and even physical device controllers.  This shift unlocks <em>real‑world utility</em> (e.g., up‑to‑date weather, transactional finance) while also introducing new engineering challenges: <strong>schema definition, reliable invocation, latency, cost, security, and evaluation</strong>.</p>
+<p>This report synthesises the most recent public guidance (OpenAI function‑calling, Azure OpenAI, LangChain, ChatGPT plugin pipeline), interaction‑design research, security taxonomies, cost‑aware training strategies, benchmark suites, and production case studies.  It culminates in a concrete <strong>best‑practice playbook</strong> that developers can adopt for robust, maintainable, and scalable LLM‑augmented services.</p>
+<hr />
+<h2 id="2-foundations-of-llmdriven-tool-use">2️⃣ Foundations of LLM‑Driven Tool Use</h2>
+<h3 id="21-openai-functioncalling-now-tools">2.1 OpenAI Function‑Calling (now “Tools”)</h3>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Description</th>
+<th>Key Tips</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tool definition</strong></td>
+<td>JSON‑Schema‑like object under the <code>tools</code> array: <code>type</code>, <code>name</code>, <code>description</code>, <code>parameters</code> (object with <code>properties</code>, <code>required</code>, optional <code>additionalProperties:false</code>).</td>
+<td>Use <code>strict:true</code> to enforce exact schema compliance; keep schemas shallow to minimise token usage.</td>
+</tr>
+<tr>
+<td><strong>Call flow</strong></td>
+<td>1️⃣ Send request with tools. 2️⃣ Model may respond with <code>tool_call</code> (name + arguments). 3️⃣ Application executes the function, captures output, and returns <code>tool_call_output</code>. 4️⃣ Model receives the observation and can continue reasoning. 5️⃣ Final response is emitted.</td>
+<td>Follow the 5‑step loop; treat the <code>tool_call_output</code> as a new observation in the conversation.</td>
+</tr>
+<tr>
+<td><strong>Configuration</strong></td>
+<td><code>tool_choice</code> (<code>auto</code>, <code>required</code>, specific name, or <code>none</code>). <code>parallel_tool_calls</code> (default <strong>true</strong>) – enables multiple tool calls in a single turn.</td>
+<td>Set <code>tool_choice=required</code> for deterministic workflows; disable parallel calls when ordering matters.</td>
+</tr>
+<tr>
+<td><strong>Streaming</strong></td>
+<td><code>stream:true</code> sends incremental JSON fragments and a distinct <code>function_call_output</code> event.</td>
+<td>Useful for UI‑side low‑latency UX; buffer until a complete JSON is received.</td>
+</tr>
+<tr>
+<td><strong>Best‑practice highlights</strong></td>
+<td>– Clear, concise tool names &amp; descriptions. – ≤ 20 tools per request (token budget). – Mark enumerations (<code>enum</code>) and required fields. – Keep parameter types unambiguous (avoid <code>any</code>). – Place static context outside the schema.</td>
+<td>See Section 7 for a checklist.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Security note:</strong> Even with strict mode, the model can be coaxed into “prompt‑injection” attacks that try to trick it into constructing malicious arguments. Validation should occur <strong>after</strong> the model emits the call, before executing any side‑effect. </p>
+<hr />
+<h3 id="22-langchains-tool-interface">2.2 LangChain’s Tool Interface</h3>
+<p>LangChain abstracts the raw API contract into a <strong>Tool</strong> class:
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Tool</span><span class="p">:</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">[[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">str</span><span class="p">]</span>
+</code></pre></div>
+* <strong>Binding</strong> – <code>.bind_tools([...])</code> attaches a list of tools to a language model or an agent. The model decides <strong>when</strong> to call them, similarly to OpenAI’s <code>tool_choice=auto</code>.
+* <strong>Toolkits</strong> – Groups of related tools (e.g., <em>SearchToolkit</em>, <em>SQLDatabaseToolkit</em>) simplify onboarding; they expose a unified schema to the LLM.
+* <strong>Ecosystem categories</strong> (per the LangChain docs):
+  - <strong>Search</strong> – Bing, Google, DuckDuckGo, Serper, Tavily.
+  - <strong>Code Interpreter</strong> – Azure Container Apps, Bearly, Riza.
+  - <strong>Productivity</strong> – GitHub, Gmail, Jira, Slack, Twilio.
+  - <strong>Web Browsing</strong> – Playwright, Hyperbrowser, pure <code>requests</code>.
+  - <strong>Database</strong> – SQLDatabase, Cassandra, Spark SQL.
+  - <strong>Finance</strong> – GOAT, Stripe wrappers.
+* <strong>Custom tools</strong> – Implement the <code>Tool</code> interface, provide a JSON schema or use LangChain’s <code>StructuredTool</code> for automatic validation.</p>
+<p>LangChain thus <strong>decouples the LLM‑model from the transport layer</strong>, letting developers focus on <em>function semantics</em> while the library handles prompting, retry logic, and parallelisation.</p>
+<hr />
+<h3 id="23-chatgpt-gpt4-plugins-customtool-plugins">2.3 ChatGPT / GPT‑4 Plugins (Custom‑Tool Plugins)</h3>
+<p>A <strong>four‑step pipeline</strong> moves an arbitrary HTTP API into a first‑class LLM tool:
+1. <strong>Expose</strong> the desired functionality as a public HTTPS endpoint (REST/GraphQL).<br />
+2. <strong>Write an OpenAPI (Swagger) spec</strong> that fully describes routes, parameters, auth, response schemas.<br />
+3. <strong>Create <code>ai-plugin.json</code></strong> manifest: name, description, <code>openapi_url</code>, authentication method, icons, usage instructions.<br />
+4. <strong>Register</strong> the plugin on the OpenAI developer portal (requires ChatGPT‑Plus or wait‑list). After verification, the model can invoke the API automatically.</p>
+<p><em>Implementation tip</em>: a minimal Flask app with a single route, environment‑protected API keys, and deployment on a public HTTPS host (Vercel, Railway, Repl.it) is sufficient for prototyping.</p>
+<p><strong>No‑code alternatives</strong> (Plus AI, BotPenguin, custom GPT builders) auto‑generate the OpenAPI spec and manifest, but the core requirements (reachable API, compliant spec, manifest) remain unchanged.</p>
+<hr />
+<h2 id="3-interaction-design-for-toolenabled-agents">3️⃣ Interaction Design for Tool‑Enabled Agents</h2>
+<h3 id="31-ui-taxonomy-divergentconvergent-workflows">3.1 UI Taxonomy &amp; Divergent‑Convergent Workflows</h3>
+<p>Recent HCI research proposes a <strong>taxonomy of UI patterns</strong> that support the <em>divergent → convergent</em> workflow typical of LLM tool use:</p>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Description</th>
+<th>Example Implementations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Spatial navigation (pan/zoom canvas)</strong></td>
+<td>Users explore a 2‑D plane where each node = an LLM‑generated action or tool call.</td>
+<td>Luminate, Spellburst canvas graphs</td>
+</tr>
+<tr>
+<td><strong>Zoom‑and‑filter lists</strong></td>
+<td>List/grid view with dynamic filters; supports quick pruning of irrelevant suggestions.</td>
+<td>Genquery, adaptive suggestion panels</td>
+</tr>
+<tr>
+<td><strong>Node‑based linking / brushing</strong></td>
+<td>Drag‑and‑drop connections between actions, visualising dependencies (e.g., “fetch weather → summarize”).</td>
+<td>Node‑graph editors in language‑agent IDEs</td>
+</tr>
+<tr>
+<td><strong>Details‑on‑demand tooltips</strong></td>
+<td>Hover cards reveal full JSON arguments, execution logs, and allow inline edits.</td>
+<td>Tooltip‑driven editing in Promptify</td>
+</tr>
+<tr>
+<td><strong>Parameter sliders</strong></td>
+<td>Real‑time manipulation of numeric or categorical parameters (temperature, top‑p, tool‑specific thresholds).</td>
+<td>Slider controls in LangChain Playground</td>
+</tr>
+</tbody>
+</table>
+<p>These patterns embody Shneiderman’s mantra <strong>overview → zoom &amp; filter → details‑on‑demand</strong>, encouraging users to generate many alternatives (divergent) and then focus on a refined subset (convergent).</p>
+<h3 id="32-canvasbased-exploration-model-extended-ontochat">3.2 Canvas‑Based Exploration Model (Extended OntoChat)</h3>
+<p>A concrete interaction model builds on the <strong>OntoChat</strong> system:
+1. <strong>Seed</strong>: User provides a domain description (e.g., “supplier metadata extraction”).
+2. <strong>Generation</strong>: LLM produces a set of candidate actions, plotted on a 2‑D canvas.
+3. <strong>Explore</strong>: Users pan/zoom for an overview; clicking a region triggers <strong>augmentation</strong> – the LLM creates more actions focused on that semantic zone.
+4. <strong>Filter</strong>: Semantic or keyword search highlights relevant items.
+5. <strong>Inspect</strong>: Selecting an item opens a tooltip with full JSON arguments and a preview of tool output.
+6. <strong>Edit &amp; Iterate</strong>: Edits are sent back to the LLM, which refines the plan, possibly adding new tool calls.</p>
+<p>The canvas‑plus‑inline‑controls workflow <strong>keeps the user in a single surface</strong>, enabling rapid iteration without context switching, and works equally for exploratory research and production decision‑making.</p>
+<hr />
+<h2 id="4-security-safety-considerations">4️⃣ Security &amp; Safety Considerations</h2>
+<h3 id="41-threat-landscape">4.1 Threat Landscape</h3>
+<table>
+<thead>
+<tr>
+<th>Threat</th>
+<th>Impact</th>
+<th>Typical Trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Prompt‑injection</strong></td>
+<td>Malicious tool call, data exfiltration, arbitrary code execution.</td>
+<td>Attacker crafts user text that influences the model to generate a harmful <code>arguments</code> payload.</td>
+</tr>
+<tr>
+<td><strong>Unrestricted file‑system / network access</strong></td>
+<td>Reads/writes sensitive data, SSRF, DoS, exfiltration.</td>
+<td>Tool implementation inadvertently exposes OS‑level APIs.</td>
+</tr>
+<tr>
+<td><strong>Cross‑tenant leakage</strong></td>
+<td>One user’s data appears in another’s session.</td>
+<td>Shared inference service without per‑session isolation.</td>
+</tr>
+<tr>
+<td><strong>Mobile/embedded agent hijack</strong></td>
+<td>Device compromise, privacy breach.</td>
+<td>Agents that automate GUI actions or run background services.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-sandboxing-isolation-strategies">4.2 Sandboxing &amp; Isolation Strategies</h3>
+<ol>
+<li><strong>Container‑level isolation</strong> – Run each tool invocation in lightweight containers (Docker, gVisor, Firecracker). Enforce:</li>
+<li>Read‑only file‑system mounts.</li>
+<li>Network egress filtering (allow only whitelisted destinations).</li>
+<li>Cgroup limits on CPU &amp; memory.</li>
+<li><strong>Language‑level sandbox</strong> – Use restricted REPLs (e.g., Pyodide, Subprocess sandbox) for code execution; whitelist safe modules only.</li>
+<li><strong>API Gateway Enforcement</strong> – Every external call passes through a gateway that validates:</li>
+<li>Authentication &amp; scoped permissions.</li>
+<li>Rate limiting.</li>
+<li>Auditable logs for anomaly detection.</li>
+<li><strong>Per‑session memory isolation</strong> – Clear caches after each user session; encrypt any transient storage with short‑lived keys.</li>
+</ol>
+<h3 id="43-validation-policy-enforcement-frameworks">4.3 Validation &amp; Policy Enforcement Frameworks</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Mechanism</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pre‑execution</strong></td>
+<td>Schema validation (<code>strict:true</code>, JSON‑Schema) + safe‑argument filters (regex, whitelist).</td>
+<td>Reject arguments containing <code>rm -rf</code>, URLs not in allowed list.</td>
+</tr>
+<tr>
+<td><strong>Runtime DSL</strong></td>
+<td>Custom policy language (<code>\tool</code> system) parsed via ANTLR4; triggers, predicates, actions (allow, ask‑user, abort).</td>
+<td>“If tool=<code>web_search</code> and query contains <code>password</code>, abort.”</td>
+</tr>
+<tr>
+<td><strong>Post‑execution</strong></td>
+<td>Observation sanitisation – strip PII, limit length, redact secrets before feeding back to LLM.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Continuous testing</strong></td>
+<td><strong>SandboxEval</strong> (malicious‑code suite) &amp; <strong>AgentScan</strong> (mobile vector) – run nightly CI pipelines to detect regressions.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The combination of <strong>hard sandboxing</strong>, <strong>strict schema enforcement</strong>, and <strong>automated security testing</strong> forms a defense‑in‑depth posture for production LLM‑tool pipelines.</p>
+<hr />
+<h2 id="5-costaware-latencyoptimised-engineering">5️⃣ Cost‑Aware &amp; Latency‑Optimised Engineering</h2>
+<h3 id="51-modellevel-toolcost-penalties">5.1 Model‑Level Tool‑Cost Penalties</h3>
+<p>Recent research (e.g., <em>Alignment for Efficient Tool Calling</em>) introduces an explicit <strong>tool‑cost penalty α</strong> into the training loss:
+<div class="highlight"><pre><span></span><code>Loss_total = Loss_task + α * Cost(tool_calls)
+</code></pre></div>
+Typical values:
+- <strong>α≈0.2</strong> for cheap calculators (local execution).
+- <strong>α≈0.4</strong> for web search.
+- <strong>α≈0.6</strong> for heavyweight external reasoning (e.g., invoking a separate LLM).</p>
+<p><strong>Outcome:</strong> The model learns to <strong>avoid unnecessary tool calls</strong>, reducing latency and compute by up to <strong>≈50 %</strong> while preserving answer accuracy.</p>
+<h3 id="52-runtime-optimisations-engineering-tactics">5.2 Runtime Optimisations (Engineering Tactics)</h3>
+<table>
+<thead>
+<tr>
+<th>Lever</th>
+<th>Description</th>
+<th>Expected Gains</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parallel / speculative execution</strong></td>
+<td>Launch moderation, retrieval, or computation in parallel with token generation; discard if later reasoning decides they’re unnecessary.</td>
+<td>20‑30 % lower wall‑clock time.</td>
+</tr>
+<tr>
+<td><strong>Request consolidation</strong></td>
+<td>Combine tool‑selection, argument preparation, and invocation into a <strong>single prompt</strong> to avoid multiple round‑trips.</td>
+<td>Fewer network RTTs → 15‑25 % latency cut.</td>
+</tr>
+<tr>
+<td><strong>Model tiering</strong></td>
+<td>Route lightweight tool tasks (e.g., arithmetic) to smaller models (GPT‑3.5, Claude Sonnet) while delegating complex reasoning to larger models.</td>
+<td>Cost per token drops dramatically (up to 60 %).</td>
+</tr>
+<tr>
+<td><strong>Semantic caching &amp; batching</strong></td>
+<td>Cache exact or high‑similarity tool responses (similarity &gt; 0.95). Batch low‑priority calls to a shared endpoint.</td>
+<td>Repeated queries become essentially free; batch latency amortised.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Implementation tip:</strong> Provide a <strong>cost‑budget</strong> field in the system prompt (<code>{budget: 0.05 USD}</code>) and let the model self‑regulate; combine with the α‑penalty for a double‑layer guard.</p>
+<hr />
+<h2 id="6-evaluation-metrics-benchmarks">6️⃣ Evaluation Metrics &amp; Benchmarks</h2>
+<h3 id="61-core-metrics">6.1 Core Metrics</h3>
+<ol>
+<li><strong>Tool Correctness</strong> – Exact‑match between the tool(s) the model <em>should</em> have called and the ones it actually called. ✅ Binary or fractional.</li>
+<li><strong>Tool Selection Accuracy</strong> – Node‑F1 (precision/recall on chosen tool nodes) and Edge‑F1 (ordering/dependency links).</li>
+<li><strong>Invocation Accuracy</strong> – Did the model correctly decide <em>whether</em> a tool was needed?</li>
+<li><strong>Parameter‑Name F1</strong> – Precision/recall on argument field names.</li>
+<li><strong>Argument Value Distance</strong> – Levenshtein distance or absolute error for numeric values.</li>
+<li><strong>Tool Success Rate</strong> – Fraction of tool calls that executed without runtime error (important for real‑world reliability).</li>
+</ol>
+<h3 id="62-benchmark-suites">6.2 Benchmark Suites</h3>
+<table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>Size</th>
+<th>Domains</th>
+<th>Notable Features</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UltraTool (ACL 2024)</strong></td>
+<td>5.8 k samples, 22 domains, 2 032 distinct tools</td>
+<td>Comprehensive plan‑step evaluation (accuracy, completeness, executability, syntactic soundness, structural rationality, efficiency).</td>
+<td>Multi‑dimensional scoring via LLM‑as‑Judge; reports nested calls (~40 % of cases).</td>
+</tr>
+<tr>
+<td><strong>TaskBench</strong></td>
+<td>~2 k queries</td>
+<td>Focus on selection &amp; ordering of tool calls.</td>
+<td>Provides Node‑F1/Edge‑F1, Invocation Accuracy.</td>
+</tr>
+<tr>
+<td><strong>T‑eval</strong></td>
+<td>1.5 k samples</td>
+<td>Emphasises parameter filling quality.</td>
+<td>Parameter‑Name F1 + Levenshtein on values.</td>
+</tr>
+</tbody>
+</table>
+<p>Open‑source models typically lag behind proprietary LLMs (GPT‑4 ≈ 76 % UltraTool score) – highlighting an <em>open research gap</em> in tool awareness and schema adherence.</p>
+<hr />
+<h2 id="7-bestpractice-guideline-for-production-deployments">7️⃣ Best‑Practice Guideline for Production Deployments</h2>
+<p>Below is a <strong>step‑by‑step playbook</strong> that integrates the insights above.</p>
+<h3 id="71-prompt-engineering-systemprompt-tool-disclosure">7.1 Prompt Engineering &amp; System‑Prompt Tool Disclosure</h3>
+<p><div class="highlight"><pre><span></span><code>System Prompt:
+You are an assistant equipped with the following tools. Use a tool **only** when the user request cannot be answered from the conversation history.
+
+TOOLS:
+- `search_web(query: string, top_k: integer = 3) -&gt; list[dict]` – fetches up‑to‑date web results.
+- `calc(expression: string) -&gt; number` – safe arithmetic evaluator.
+- `pdf_extract(file_id: string, fields: list[string]) -&gt; dict` – extracts structured data from a PDF stored in the vector store.
+
+When you decide to call a tool, output **exactly** the JSON snippet shown in the example below.
+
+Example:
+{ &quot;tool&quot;: &quot;search_web&quot;, &quot;arguments&quot;: { &quot;query&quot;: &quot;latest S&amp;P 500 price&quot; } }
+</code></pre></div>
+<em>Rationale:</em> Embedding a short, human‑readable description of each tool inside the system prompt informs the model’s <em>semantic</em> understanding, reducing missed calls.</p>
+<h3 id="72-schema-design-strict-mode">7.2 Schema Design &amp; Strict Mode</h3>
+<ul>
+<li>Use <strong>JSON‑Schema Draft‑07</strong> compatible definitions.</li>
+<li>Mark <code>additionalProperties: false</code> to prevent stray fields.</li>
+<li>Prefer <strong>enums</strong> for categorical inputs and <strong>numeric ranges</strong> for limits.</li>
+<li>Enable <code>strict:true</code> on the API request to force exact schema compliance.</li>
+</ul>
+<h3 id="73-observability-logging-version-control">7.3 Observability, Logging &amp; Version Control</h3>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>What to Log</th>
+<th>Retention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Request payload</strong></td>
+<td>user prompt, system prompt, temperature, model version, tool list.</td>
+<td>30 days (GDPR‑compliant anonymised).</td>
+</tr>
+<tr>
+<td><strong>Model output</strong></td>
+<td>raw JSON (including <code>tool_calls</code>), token usage, latency.</td>
+<td>90 days.</td>
+</tr>
+<tr>
+<td><strong>Tool execution</strong></td>
+<td>input arguments, stdout/stderr, exit status, execution time, resource usage.</td>
+<td>90 days.</td>
+</tr>
+<tr>
+<td><strong>Outcome</strong></td>
+<td>final assistant reply, success/failure flag, user feedback (rating).</td>
+<td>180 days.</td>
+</tr>
+</tbody>
+</table>
+<p>Store logs in an immutable append‑only store (e.g., CloudWatch Logs, ELK) and tag each version with a git SHA of the prompt‑tool bundle.</p>
+<h3 id="74-runtime-dsl-parser-integration">7.4 Runtime DSL &amp; Parser Integration</h3>
+<ul>
+<li><strong>Parser layer</strong> – Immediately after model output, run a <strong>schema‑driven parser</strong> (e.g., <code>llm-exe</code> parser). It extracts the JSON, validates against the schema, and either returns a typed object or raises an exception.</li>
+<li><strong>DSL enforcement</strong> – Define a lightweight rule language (<code>\tool</code>) that can express policies such as:
+  <div class="highlight"><pre><span></span><code>when tool=search_web and arguments.query contains &quot;password&quot; =&gt; abort
+when tool=calc and arguments.expression length &gt; 200 =&gt; reject
+</code></pre></div>
+  The rule engine evaluates before the actual function is called.</li>
+</ul>
+<h3 id="75-safety-gatekeeping-defenseindepth">7.5 Safety Gate‑keeping (Defense‑in‑Depth)</h3>
+<ol>
+<li><strong>Sanitise arguments</strong> (regex whitelist, length caps).</li>
+<li><strong>Run tools in isolated containers</strong> with network egress filters.</li>
+<li><strong>Ask for user confirmation</strong> on side‑effectful actions (e.g., sending email, making a payment).</li>
+<li><strong>Audit &amp; alert</strong> on anomalous patterns (e.g., sudden burst of <code>search_web</code> calls).</li>
+</ol>
+<hr />
+<h2 id="8-case-studies-realworld-deployments">8️⃣ Case Studies &amp; Real‑World Deployments</h2>
+<h3 id="81-industrial-pdfextraction-agent-aidagent-2025">8.1 Industrial PDF‑Extraction Agent (AID‑agent, 2025)</h3>
+<ul>
+<li><strong>Goal:</strong> Pull supplier‑metadata and chemical‑composition fields from 44 heterogeneous technical‑report PDFs.</li>
+<li><strong>Tool Stack:</strong></li>
+<li>Azure Document Intelligence OCR.</li>
+<li>Table‑reconstruction tool (custom Python library).</li>
+<li>Vision module for extracting image‑embedded tables.</li>
+<li>Rule‑based validator (schema‑enforced JSON).  </li>
+<li><strong>Workflow:</strong></li>
+<li>LLM receives a high‑level request (e.g., <em>"Extract all copper percentages"</em>).</li>
+<li>It <strong>plans</strong> a sequence: <code>ocr → locate tables → extract rows → validate → aggregate</code>.</li>
+<li>Each step invokes the appropriate tool; the LLM observes the output and decides the next action (ReAct pattern).</li>
+<li><strong>Results:</strong> End‑to‑end <strong>F1 = 0.926</strong> (vs. 0.842 baseline OCR‑only). Ablation shows the vision module adds +0.04, validator +0.06.</li>
+<li><strong>Lessons:</strong> Robust preprocessing (deskew, rotate) is essential; strict schema dramatically lowered downstream parsing errors.</li>
+</ul>
+<h3 id="82-finance-bot-realtime-stock-insight">8.2 Finance Bot (Real‑time Stock Insight)</h3>
+<ul>
+<li><strong>Tools:</strong> <code>yfinance</code> API wrapper, <code>calc</code> for portfolio metrics, <code>search_web</code> for news headlines.</li>
+<li><strong>Pattern:</strong> Parallel tool calls – fetch prices for 5 tickers and news in a single model turn; the model merges observations and produces a concise recommendation.</li>
+<li><strong>Latency:</strong> 1.8 s average (parallel + caching).</li>
+</ul>
+<h3 id="83-travel-assistant">8.3 Travel Assistant</h3>
+<ul>
+<li><strong>Tools:</strong> <code>openweather</code>, <code>flight_search</code>, <code>hotel_lookup</code>.</li>
+<li><strong>Interaction:</strong> Canvas UI with a <em>trip‑timeline</em> node graph; each node represents a tool call (flight → weather → packing list).</li>
+<li><strong>User Study:</strong> 72 % of participants preferred the node‑graph over a linear chat flow for itinerary building.</li>
+</ul>
+<h3 id="84-legal-clause-analyzer">8.4 Legal Clause Analyzer</h3>
+<ul>
+<li><strong>Tools:</strong> <code>pdf_extract</code>, <code>search_web</code> (for precedent), <code>gpt‑4o</code> for reasoning.</li>
+<li><strong>Security:</strong> Enforced per‑session isolation on document storage; all extracted text sanitized to avoid leaking client PII.</li>
+<li><strong>Accuracy:</strong> Clause‑extraction precision 0.94, recall 0.91.</li>
+</ul>
+<h3 id="85-marketresearch-synthesizer">8.5 Market‑Research Synthesizer</h3>
+<ul>
+<li><strong>Tools:</strong> Multi‑source web scrapers (Playwright), <code>calc</code> for trend‑line fitting, <code>search_web</code> for competitor data.</li>
+<li><strong>Orchestration:</strong> ReAct loop with <strong>speculative execution</strong> – the scraper starts while the LLM is still reasoning about the report outline, yielding total turnaround &lt; 4 s for a 3‑page brief.</li>
+</ul>
+<h3 id="86-react-zero_shot_react-as-a-generic-pattern">8.6 ReAct / ZERO_SHOT_REACT as a Generic Pattern</h3>
+<ul>
+<li><strong>Core Idea:</strong> LLM produces a <strong>chain‑of‑thought</strong> statement, decides whether to call a tool, receives an observation, and repeats.</li>
+<li><strong>Implementation in LangChain:</strong> <code>ZeroShotAgent</code> with a <code>toolkit</code> – one line of code <code>agent = ZeroShotAgent.from_llm_and_tools(llm, tools)</code>.</li>
+<li><strong>Benefits:</strong> Uniform API across domains, explainable reasoning trace, easy logging of intermediate steps.</li>
+</ul>
+<hr />
+<h2 id="9-future-directions-open-research-questions">9️⃣ Future Directions &amp; Open Research Questions</h2>
+<ol>
+<li><strong>Adaptive Tool‑Cost Scheduling</strong> – Dynamically adjusting α based on real‑time budget (e.g., user‑specified latency SLA).  </li>
+<li><strong>Hierarchical Tool Discovery</strong> – Allow the model to <em>create</em> new tool wrappers on‑the‑fly (e.g., generate OpenAPI spec from a description).  </li>
+<li><strong>Cross‑Modal Tool Integration</strong> – Combining vision, audio, and tactile sensors with language reasoning in a unified tool‑calling framework.  </li>
+<li><strong>Standardised Benchmark Expansion</strong> – Adding more domains (robotics, IoT) and measuring <em>security‑aware</em> metrics (percentage of disallowed calls prevented).  </li>
+<li><strong>Self‑Auditing LLMs</strong> – Models that predict the <em>cost</em> and <em>risk</em> of a proposed tool call before emitting it, enabling a two‑stage verification loop.  </li>
+<li><strong>Explainability for Tool Decisions</strong> – Rendering the tool‑selection rationale as a user‑facing narrative (e.g., “I used <code>search_web</code> because the question asked for the latest policy, which I cannot retrieve from memory”).</li>
+</ol>
+<hr />
+<h2 id="references-further-reading">🔟 References &amp; Further Reading</h2>
+<ol>
+<li><strong>OpenAI Function Calling – Core Guide</strong> (2023‑2024).  </li>
+<li><strong>Azure OpenAI – Function‑Calling Integration</strong> (2024).  </li>
+<li><strong>LangChain Documentation – Tools &amp; Toolkits</strong> (v0.2+).  </li>
+<li><strong>ChatGPT Plugins – Development Guide</strong> (OpenAI, 2024).  </li>
+<li><strong>Interaction Design for LLM‑Based Tools</strong> – Survey (2024).  </li>
+<li><strong>LLM‑Driven Tool Use – Security Threats</strong> – Whitepaper (2024).  </li>
+<li><strong>SandboxEval &amp; AgentScan</strong> – Security testing frameworks (2024).  </li>
+<li><strong>Alignment for Efficient Tool Calling</strong> – ACL 2024 paper.  </li>
+<li><strong>UltraTool Benchmark Suite</strong> – ACL 2024 Findings.  </li>
+<li><strong>ReAct: Synergizing Reasoning and Acting</strong> – arXiv 2023.  </li>
+<li><strong>ZERO_SHOT_REACT – LangChain Implementation</strong> (2024).  </li>
+<li><strong>AID‑agent PDF Extraction Case Study</strong> – Proceedings of the 2025 Industrial AI Conference.  </li>
+<li><strong>Runtime‑Constraint DSL – \tool System</strong> – Workshop paper (2024).  </li>
+<li><strong>llm‑exe Parser Module</strong> – GitHub repository (2024).  </li>
+<li><strong>Best‑Practice Prompt &amp; Tool Design</strong> – OpenAI Cookbook (2024).  </li>
+</ol>
+<hr />
+<p><strong>End of Report</strong></p>
+<p><em>Prepared for internal distribution. Any reuse requires proper citation of the sources listed above.</em></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="https://doc.weixin.qq.com/smartsheet/form/1_wpkSFfCgAAIzkZ-F0ncReQFci0uBXXig_a04906" target="_blank" rel="noopener">feedback form</a>.
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.select", "navigation.sections", "navigation.tabs", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,9 @@
+/* Config the width of the main content area */
+.md-grid {
+  max-width: 85%;
+}
+
+/* Config the width of the code block */
+.md-typeset pre {
+  max-width: 100%;
+}
